@@ -1,18 +1,17 @@
 import 'package:vidente_app/models/previsao_hora.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:http/http.dart';
 
 class PrevisaoService {
-  List<PrevisaoHora> recuperarUltimasPrevisoes() {
-    return [
-      PrevisaoHora('11:00', 'Ensolarado', 1, 32),
-      PrevisaoHora('12:00', 'Ensolarado', 1, 32),
-      PrevisaoHora('13:00', 'Ensolarado', 1, 33),
-      PrevisaoHora('14:00', 'Ensolarado', 1, 34),
-      PrevisaoHora('15:00', 'Ensolarado', 1, 35),
-      PrevisaoHora('16:00', 'Ensolarado', 1, 34),
-      PrevisaoHora('17:00', 'Parcialmente Ensolarado', 2, 32),
-      PrevisaoHora('18:00', 'Nuvens esparsas', 3, 29),
-      PrevisaoHora('19:00', 'Nuvens esparsas', 3, 26),
-      PrevisaoHora('20:00', 'Nuvens esparsas', 3, 25),
-    ];
+  final String baseUrlAPI = 'dataservice.accuweather.com';
+  final String path = '/forecasts/v1/hourly/12hour/${env["CITY_CODE"]}';
+  final Map<String, String> params = {
+    'apikey': env['API_KEY'],
+    'language': 'pt-BR',
+    'metric': 'true'
+  };
+
+  Future<List<PrevisaoHora>> recuperarUltimasPrevisoes() async {
+    final Response reposta = await get(Uri.https(baseUrlAPI, path, params));
   }
 }
