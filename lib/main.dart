@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:vidente_app/widgets/vidente_app.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
