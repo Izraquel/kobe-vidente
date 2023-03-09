@@ -21,6 +21,7 @@ class PrevisaoService {
         it.map((objJson) => PrevisaoHora.transformarJSON(objJson))
       );
 
+      print('Carregou novas previsoes');
       return previsoes;
     } else {
       throw Exception('Falha ao carregar as previsões');
