@@ -32,14 +32,32 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Kobe Vidente'),
-        centerTitle: true,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(70.0),
+        child: AppBar(
+          centerTitle: true,
+          title:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Container(
+              padding: const EdgeInsets.all(8.0),
+              child: const Text('Kobe Vidente',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22,
+                  )),
+            ),
+            Image.asset(
+              'images/logo.png',
+              fit: BoxFit.contain,
+              height: 70,
+            ),
+          ]),
+        ),
       ),
       body: RefreshIndicator(
         onRefresh: atualizarPrevisoes,
         child: Center(
-          child: FutureBuilder<List<PrevisaoHora>>(
+            child: FutureBuilder<List<PrevisaoHora>>(
           future: ultimasPrevisoes,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
@@ -65,7 +83,7 @@ class _HomeState extends State<Home> {
               return Column(
                 children: [
                   Resumo(
-                    cidade: 'Volta Redonda - RJ',
+                    cidade: 'Porto Alegre - RS',
                     temperaturaAtual: temperaturaAtual,
                     temperaturaMaxima: maiorTemperatura,
                     temperaturaMinima: menorTemperatura,

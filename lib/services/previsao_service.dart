@@ -5,7 +5,7 @@ import 'dart:convert';
 
 class PrevisaoService {
   final String baseUrlAPI = 'dataservice.accuweather.com';
-  final String path = '/forecasts/v1/hourly/12hour/${env["CITY_CODE"]}';
+  final String path = '/forecasts/v1/hourly/12hour/${env["CITY_CODE_POA"]}';
   final Map<String, String?> params = {
     'apikey': env['API_KEY'],
     'language': 'pt-BR',
@@ -15,11 +15,10 @@ class PrevisaoService {
   Future<List<PrevisaoHora>> recuperarUltimasPrevisoes() async {
     final Response resposta = await get(Uri.https(baseUrlAPI, path, params));
 
-    if(resposta.statusCode == 200) {
+    if (resposta.statusCode == 200) {
       Iterable it = json.decode(resposta.body);
-      List<PrevisaoHora> previsoes = List.from(
-        it.map((objJson) => PrevisaoHora.transformarJSON(objJson))
-      );
+      List<PrevisaoHora> previsoes =
+          List.from(it.map((objJson) => PrevisaoHora.transformarJSON(objJson)));
 
       print('Carregou novas previsoes');
       return previsoes;

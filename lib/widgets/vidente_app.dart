@@ -9,13 +9,16 @@ class VidenteApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: TemaController.instancia, 
-      builder: (context,child) {
+      animation: TemaController.instancia,
+      builder: (context, child) {
         return MaterialApp(
           title: 'Kobe Vidente',
           theme: TemaController.instancia.usarTemaEscuro
-          ? ThemeData.dark()
-          : ThemeData.light(),
+              ? ThemeData.dark()
+              : ThemeData(
+                  colorScheme: ColorScheme.fromSwatch(
+                  primarySwatch: Colors.indigo,
+                )),
           debugShowCheckedModeBanner: false,
           home: Home(),
         );

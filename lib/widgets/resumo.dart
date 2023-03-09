@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import '../controllers/tema_controller.dart';
 
 class Resumo extends StatelessWidget {
-  //const Resumo({super.key});
-
   final String cidade;
   final String descricao;
   final double temperaturaAtual;
