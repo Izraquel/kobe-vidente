@@ -1,7 +1,6 @@
 # Kobe Vidente
 
-Aplicativo que consome uma API de previsao de tempo.
-A new Flutter project.
+Weather App made as the Kode Start onboarding final project.
 
 ## ⚙️ Getting Started
 
@@ -17,15 +16,16 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 
-# Demonstração
+# Demonstration
 
+App main page in Light Mode: https://imgur.com/a/DTU82gM
+App main page in Dark Mode: https://imgur.com/a/heXR9ti
 
-
-## 🛠️ Construído com
+## 🛠️ Build With
 
 * [Flutter](https://flutter.dev/)
 * [Dart](https://dart.dev/)
-
+* [AccuWeather API](https://developer.accuweather.com)
 
 ---
-⌨️ com ❤️ por [Raquel Izidorio](https://github.com/Izraquel) e [Daniele Santos](https://github.com/danisantoss) 😊
+⌨️ with ❤️ by [Raquel Izidorio](https://github.com/Izraquel) and [Danielle Santos](https://github.com/danisantoss) 😊
