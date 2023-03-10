@@ -19,6 +19,7 @@ samples, guidance on mobile development, and a full API reference.
 # Demonstration
 
 App main page in Light Mode: https://imgur.com/a/DTU82gM
+
 App main page in Dark Mode: https://imgur.com/a/heXR9ti
 
 ## 🛠️ Build With
